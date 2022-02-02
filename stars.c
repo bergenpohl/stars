@@ -7,26 +7,8 @@ struct coord {
 	float y;
 };
 
-void createStar(struct coord *star) {
-	star[0].x = -1.0;
-	star[0].y = +0.0;
-	star[1].x = -0.1;
-	star[1].y = +0.1;
-	star[2].x = +0.0;
-	star[2].y = +1.0;
-	star[3].x = +0.1;
-	star[3].y = +0.1;
-	star[4].x = +1.0;
-	star[4].y = +0.0;
-	star[5].x = +0.1;
-	star[5].y = -0.1;
-	star[6].x = +0.0;
-	star[6].y = -1.0;
-	star[7].x = -0.1;
-	star[7].y = -0.1;
-}
-
 void stars(int nstars);
+void createStar(struct coord *star);
 
 int main(int argc, char *argv[]) {
 	int nstars;
@@ -79,4 +61,23 @@ void stars(int nstars) {
 		puts("/>");
 	}
 	puts("</svg>");
+}
+
+void createStar(struct coord *star) {
+	star[0].x = -1.0;
+	star[0].y = +0.0;
+	star[1].x = -0.1;
+	star[1].y = +0.1;
+	star[2].x = +0.0;
+	star[2].y = +1.0;
+	star[3].x = +0.1;
+	star[3].y = +0.1;
+	star[4].x = +1.0;
+	star[4].y = +0.0;
+	star[5].x = +0.1;
+	star[5].y = -0.1;
+	star[6].x = +0.0;
+	star[6].y = -1.0;
+	star[7].x = -0.1;
+	star[7].y = -0.1;
 }
