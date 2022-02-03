@@ -21,17 +21,21 @@ int main(int argc, char *argv[]) {
 }
 
 void stars(int nstars) {
-	unsigned int width = 500;
-	unsigned int height = 100;
+	unsigned int width = 1000;
+	unsigned int height = 500;
 	unsigned int red = 188;
 	unsigned int green = 192;
 	unsigned int blue = 204;
+	unsigned int r, g, b;
+	float colorVariation = 42;
 	float size;
 	float maxSize = 1.5;
 	float minSize = 0.5;
 	float x, y;
 	int i;
 	struct coord star[8];
+
+	
 	
 	createStar(star);
 	srand(time(NULL));
@@ -56,7 +60,10 @@ void stars(int nstars) {
 		
 		printf("\" ");
 		printf("style=\"");
-		printf("fill:rgb(%d,%d,%d);", red, green, blue);
+		r = red + (int)(((float)rand() / (float)(RAND_MAX / (colorVariation))) - (colorVariation / 2));
+		g = green + (int)(((float)rand() / (float)(RAND_MAX / (colorVariation))) - (colorVariation / 2));
+		b = blue + (int)(((float)rand() / (float)(RAND_MAX / (colorVariation))) - (colorVariation / 2));
+		printf("fill:rgb(%d,%d,%d);", r, g, b);
 		printf("\"");
 		puts("/>");
 	}
