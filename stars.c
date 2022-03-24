@@ -35,8 +35,6 @@ void stars(int nstars) {
 	int i;
 	struct coord star[8];
 
-	
-	
 	createStar(star);
 	srand(time(NULL));
 	puts("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>");
@@ -45,19 +43,15 @@ void stars(int nstars) {
 	while (nstars--) {
 		printf("\t<path ");
 		printf("d=\"");
-
 		size = ((float)rand() / (float)(RAND_MAX / (maxSize - minSize))) + minSize;
-
 		x = (float)rand() / (float)(RAND_MAX / ((float)width - (size * 2))) + size;
 		y = (float)rand() / (float)(RAND_MAX / ((float)height - (size * 2))) + size;
-
 		printf("M%f,%f", x + (star[0].x * size), y + (star[0].y * size));
 		i = 0;
 		while (++i < 8) {
 			printf("L%f,%f", x + (star[i].x * size), y + (star[i].y * size));
 		}
 		printf("L%f,%fZ", x + (star[0].x * size), y + (star[0].y * size));
-		
 		printf("\" ");
 		printf("style=\"");
 		r = red + (int)(((float)rand() / (float)(RAND_MAX / (colorVariation))) - (colorVariation / 2));
